@@ -1,1 +1,12 @@
-export class CreateDinnerProductDto {}
+export class CreateDinnerProductDto {
+  name?: string;
+  details?: string;
+  type?: string;
+  liters?: number;
+  units?: number;
+  kilograms?: number;
+  image?: string;
+  seller?: string;
+  purchasePrice?: number;
+  salePrice?: number;
+}
