@@ -12,7 +12,7 @@ export class UsersService {
   ) {}
 
   create(createUserDto: CreateUserDto) {
-    return this.userRepository.create(createUserDto);
+    return this.userRepository.save(createUserDto);
   }
 
   findAll() {
@@ -20,14 +20,17 @@ export class UsersService {
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} user`;
+    return this.userRepository.findOne(id);
   }
 
-  update(id: number, updateUserDto: UpdateUserDto) {
-    return `This action updates a #${id} user`;
+  async update(id: number, updateUserDto: UpdateUserDto) {
+    const userToUpdate = await this.userRepository.findOne(id);
+    userToUpdate.email = updateUserDto.email ?? userToUpdate.email;
+    userToUpdate.password = updateUserDto.password ?? userToUpdate.password;
+    return this.userRepository.save(userToUpdate);
   }
 
   remove(id: number) {
-    return `This action removes a #${id} user`;
+    return this.userRepository.delete(id);
   }
 }
