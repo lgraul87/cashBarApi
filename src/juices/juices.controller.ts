@@ -1,8 +1,15 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+} from '@nestjs/common';
 import { JuicesService } from './juices.service';
 import { CreateJuiceDto } from './dto/create-juice.dto';
 import { UpdateJuiceDto } from './dto/update-juice.dto';
-
 @Controller('juices')
 export class JuicesController {
   constructor(private readonly juicesService: JuicesService) {}
@@ -28,7 +35,7 @@ export class JuicesController {
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.juicesService.remove(+id);
+  remove(@Param('id') id: number) {
+    return this.juicesService.remove(id);
   }
 }

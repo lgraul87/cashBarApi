@@ -10,7 +10,6 @@ import {
 import { DinnerProductsService } from './dinner-products.service';
 import { CreateDinnerProductDto } from './dto/create-dinner-product.dto';
 import { UpdateDinnerProductDto } from './dto/update-dinner-product.dto';
-
 @Controller('dinner-products')
 export class DinnerProductsController {
   constructor(private readonly dinnerProductsService: DinnerProductsService) {}

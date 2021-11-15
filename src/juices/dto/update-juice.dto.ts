@@ -1,4 +1,11 @@
-import { PartialType } from '@nestjs/mapped-types';
-import { CreateJuiceDto } from './create-juice.dto';
-
-export class UpdateJuiceDto extends PartialType(CreateJuiceDto) {}
+export class UpdateJuiceDto {
+  name?: string;
+  details?: string;
+  type?: string;
+  liters?: number;
+  units?: number;
+  image?: string;
+  seller?: string;
+  purchasePrice?: number;
+  salePrice?: number;
+}
