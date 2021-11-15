@@ -1,5 +1,7 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { Beer } from 'src/beers/entities/beer.entity';
+import { BreakfastProduct } from 'src/breakfast-products/entities/breakfast-product.entity';
 import { User } from 'src/users/entities/user.entity';
 
 @Module({
@@ -11,7 +13,7 @@ import { User } from 'src/users/entities/user.entity';
       username: 'root',
       password: '',
       database: 'cashbar',
-      entities: [User],
+      entities: [User, Beer, BreakfastProduct],
       synchronize: true,
       retryAttempts: 10,
       retryDelay: 1000,
