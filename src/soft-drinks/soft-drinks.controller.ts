@@ -1,4 +1,12 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+} from '@nestjs/common';
 import { SoftDrinksService } from './soft-drinks.service';
 import { CreateSoftDrinkDto } from './dto/create-soft-drink.dto';
 import { UpdateSoftDrinkDto } from './dto/update-soft-drink.dto';
@@ -23,12 +31,15 @@ export class SoftDrinksController {
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateSoftDrinkDto: UpdateSoftDrinkDto) {
+  update(
+    @Param('id') id: string,
+    @Body() updateSoftDrinkDto: UpdateSoftDrinkDto,
+  ) {
     return this.softDrinksService.update(+id, updateSoftDrinkDto);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.softDrinksService.remove(+id);
+  remove(@Param('id') id: number) {
+    return this.softDrinksService.remove(id);
   }
 }
