@@ -1,4 +1,11 @@
-import { PartialType } from '@nestjs/mapped-types';
-import { CreateSpiritDrinkDto } from './create-spirit-drink.dto';
-
-export class UpdateSpiritDrinkDto extends PartialType(CreateSpiritDrinkDto) {}
+export class UpdateSpiritDrinkDto {
+  name?: string;
+  details?: string;
+  type?: string;
+  liters?: number;
+  units?: number;
+  image?: string;
+  seller?: string;
+  purchasePrice?: number;
+  salePrice?: number;
+}

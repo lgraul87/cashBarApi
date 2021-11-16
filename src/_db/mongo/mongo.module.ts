@@ -6,6 +6,7 @@ import { DinnerProduct } from 'src/dinner-products/entities/dinner-product.entit
 import { Juice } from 'src/juices/entities/juice.entity';
 import { LunchProduct } from 'src/lunch-products/entities/lunch-product.entity';
 import { SoftDrink } from 'src/soft-drinks/entities/soft-drink.entity';
+import { SpiritDrink } from 'src/spirit-drinks/entities/spirit-drink.entity';
 import { User } from 'src/users/entities/user.entity';
 @Module({
   imports: [
@@ -24,6 +25,7 @@ import { User } from 'src/users/entities/user.entity';
         Juice,
         LunchProduct,
         SoftDrink,
+        SpiritDrink,
       ],
       synchronize: true,
       retryAttempts: 10,
