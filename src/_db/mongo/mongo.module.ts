@@ -5,6 +5,7 @@ import { BreakfastProduct } from 'src/breakfast-products/entities/breakfast-prod
 import { DinnerProduct } from 'src/dinner-products/entities/dinner-product.entity';
 import { Juice } from 'src/juices/entities/juice.entity';
 import { LunchProduct } from 'src/lunch-products/entities/lunch-product.entity';
+import { PurchasingManager } from 'src/purchasing-manager/entities/purchasing-manager.entity';
 import { SoftDrink } from 'src/soft-drinks/entities/soft-drink.entity';
 import { SpiritDrink } from 'src/spirit-drinks/entities/spirit-drink.entity';
 import { User } from 'src/users/entities/user.entity';
@@ -26,6 +27,7 @@ import { User } from 'src/users/entities/user.entity';
         LunchProduct,
         SoftDrink,
         SpiritDrink,
+        PurchasingManager,
       ],
       synchronize: true,
       retryAttempts: 10,

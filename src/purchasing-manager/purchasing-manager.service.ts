@@ -1,26 +1,36 @@
 import { Injectable } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
+import { PurchasingManager } from './entities/purchasing-manager.entity';
 import { CreatePurchasingManagerDto } from './dto/create-purchasing-manager.dto';
 import { UpdatePurchasingManagerDto } from './dto/update-purchasing-manager.dto';
 
 @Injectable()
 export class PurchasingManagerService {
+  constructor(
+    @InjectRepository(PurchasingManager)
+    private readonly purchasingManagerRepository: Repository<PurchasingManager>,
+  ) {}
   create(createPurchasingManagerDto: CreatePurchasingManagerDto) {
-    return 'This action adds a new purchasingManager';
+    return this.purchasingManagerRepository.create(createPurchasingManagerDto);
   }
 
   findAll() {
-    return `This action returns all purchasingManager`;
+    return this.purchasingManagerRepository.find();
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} purchasingManager`;
+    return this.purchasingManagerRepository.findOne(id);
   }
 
   update(id: number, updatePurchasingManagerDto: UpdatePurchasingManagerDto) {
-    return `This action updates a #${id} purchasingManager`;
+    return this.purchasingManagerRepository.update(
+      id,
+      updatePurchasingManagerDto,
+    );
   }
 
   remove(id: number) {
-    return `This action removes a #${id} purchasingManager`;
+    return this.purchasingManagerRepository.delete(id);
   }
 }
