@@ -14,6 +14,10 @@ import { SoftDrinksModule } from './soft-drinks/soft-drinks.module';
 import { JuicesModule } from './juices/juices.module';
 import { SpiritDrinksModule } from './spirit-drinks/spirit-drinks.module';
 import { PurchasingManagerModule } from './purchasing-manager/purchasing-manager.module';
+import { TablesModule } from './tables/tables.module';
+import { WaitersModule } from './waiters/waiters.module';
+import { CounterModule } from './counter/counter.module';
+import { TakeAwayModule } from './take-away/take-away.module';
 
 @Module({
   imports: [
@@ -30,6 +34,10 @@ import { PurchasingManagerModule } from './purchasing-manager/purchasing-manager
     JuicesModule,
     SpiritDrinksModule,
     PurchasingManagerModule,
+    TablesModule,
+    WaitersModule,
+    CounterModule,
+    TakeAwayModule,
   ],
   controllers: [AppController],
   providers: [AppService],

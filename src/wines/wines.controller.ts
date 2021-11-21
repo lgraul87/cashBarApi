@@ -1,4 +1,13 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+  Put,
+} from '@nestjs/common';
 import { WinesService } from './wines.service';
 import { CreateWineDto } from './dto/create-wine.dto';
 import { UpdateWineDto } from './dto/update-wine.dto';
@@ -22,13 +31,13 @@ export class WinesController {
     return this.winesService.findOne(+id);
   }
 
-  @Patch(':id')
+  @Put(':id')
   update(@Param('id') id: string, @Body() updateWineDto: UpdateWineDto) {
     return this.winesService.update(+id, updateWineDto);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.winesService.remove(+id);
+  remove(@Param('id') id: number) {
+    return this.winesService.remove(id);
   }
 }

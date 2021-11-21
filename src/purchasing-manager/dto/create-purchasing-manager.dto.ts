@@ -5,6 +5,7 @@ import { CreateJuiceDto } from 'src/juices/dto/create-juice.dto';
 import { CreateLunchProductDto } from 'src/lunch-products/dto/create-lunch-product.dto';
 import { CreateSoftDrinkDto } from 'src/soft-drinks/dto/create-soft-drink.dto';
 import { CreateSpiritDrinkDto } from 'src/spirit-drinks/dto/create-spirit-drink.dto';
+import { CreateWineDto } from 'src/wines/dto/create-wine.dto';
 export class CreatePurchasingManagerDto {
   beerProduct?: CreateBeerDto;
   breakfastProduct?: CreateBreakfastProductDto;
@@ -13,6 +14,7 @@ export class CreatePurchasingManagerDto {
   lunchProduct?: CreateLunchProductDto;
   softDrinkProduct?: CreateSoftDrinkDto;
   spiritDrinkProduct?: CreateSpiritDrinkDto;
+  wineProduct?: CreateWineDto;
   units?: number;
   liters?: number;
   kilograms?: number;

@@ -1,26 +1,33 @@
 import { Injectable } from '@nestjs/common';
+import { Repository } from 'typeorm';
+import { InjectRepository } from '@nestjs/typeorm';
+import { SalesHistory } from './entities/sales-history.entity';
 import { CreateSalesHistoryDto } from './dto/create-sales-history.dto';
 import { UpdateSalesHistoryDto } from './dto/update-sales-history.dto';
 
 @Injectable()
 export class SalesHistoryService {
+  constructor(
+    @InjectRepository(SalesHistory)
+    private readonly salesHistoryRepository: Repository<SalesHistory>,
+  ) {}
   create(createSalesHistoryDto: CreateSalesHistoryDto) {
-    return 'This action adds a new salesHistory';
+    return this.salesHistoryRepository.create(createSalesHistoryDto);
   }
 
   findAll() {
-    return `This action returns all salesHistory`;
+    return this.salesHistoryRepository.find();
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} salesHistory`;
+    return this.salesHistoryRepository.findOne(id);
   }
 
   update(id: number, updateSalesHistoryDto: UpdateSalesHistoryDto) {
-    return `This action updates a #${id} salesHistory`;
+    return this.salesHistoryRepository.update(id, updateSalesHistoryDto);
   }
 
   remove(id: number) {
-    return `This action removes a #${id} salesHistory`;
+    return this.salesHistoryRepository.delete(id);
   }
 }
