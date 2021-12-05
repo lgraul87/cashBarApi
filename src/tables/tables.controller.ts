@@ -1,4 +1,12 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+} from '@nestjs/common';
 import { TablesService } from './tables.service';
 import { CreateTableDto } from './dto/create-table.dto';
 import { UpdateTableDto } from './dto/update-table.dto';
@@ -28,7 +36,7 @@ export class TablesController {
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.tablesService.remove(+id);
+  remove(@Param('id') id: number) {
+    return this.tablesService.remove(id);
   }
 }
