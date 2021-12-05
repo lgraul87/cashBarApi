@@ -10,6 +10,7 @@ import { SalesHistory } from 'src/sales-history/entities/sales-history.entity';
 import { SoftDrink } from 'src/soft-drinks/entities/soft-drink.entity';
 import { SpiritDrink } from 'src/spirit-drinks/entities/spirit-drink.entity';
 import { User } from 'src/users/entities/user.entity';
+import { Waiter } from 'src/waiters/entities/waiter.entity';
 import { Wine } from 'src/wines/entities/wine.entity';
 @Module({
   imports: [
@@ -32,6 +33,7 @@ import { Wine } from 'src/wines/entities/wine.entity';
         PurchasingManager,
         Wine,
         SalesHistory,
+        Waiter,
       ],
       synchronize: true,
       retryAttempts: 10,
