@@ -21,7 +21,7 @@ export class CreateTakeAwayDto {
   liters?: number;
   kilograms?: number;
   price: number;
-  waiters: CreateWaiterDto;
+  waiter: CreateWaiterDto;
   date: Date;
   bill: number;
 }

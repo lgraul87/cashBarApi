@@ -1,4 +1,12 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Param,
+  Delete,
+  Put,
+} from '@nestjs/common';
 import { TakeAwayService } from './take-away.service';
 import { CreateTakeAwayDto } from './dto/create-take-away.dto';
 import { UpdateTakeAwayDto } from './dto/update-take-away.dto';
@@ -22,13 +30,16 @@ export class TakeAwayController {
     return this.takeAwayService.findOne(+id);
   }
 
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateTakeAwayDto: UpdateTakeAwayDto) {
+  @Put(':id')
+  update(
+    @Param('id') id: string,
+    @Body() updateTakeAwayDto: UpdateTakeAwayDto,
+  ) {
     return this.takeAwayService.update(+id, updateTakeAwayDto);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.takeAwayService.remove(+id);
+  remove(@Param('id') id: number) {
+    return this.takeAwayService.remove(id);
   }
 }

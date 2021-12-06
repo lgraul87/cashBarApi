@@ -3,9 +3,9 @@ import {
   Get,
   Post,
   Body,
-  Patch,
   Param,
   Delete,
+  Put,
 } from '@nestjs/common';
 import { PurchasingManagerService } from './purchasing-manager.service';
 import { CreatePurchasingManagerDto } from './dto/create-purchasing-manager.dto';
@@ -32,7 +32,7 @@ export class PurchasingManagerController {
     return this.purchasingManagerService.findOne(+id);
   }
 
-  @Patch(':id')
+  @Put(':id')
   update(
     @Param('id') id: string,
     @Body() updatePurchasingManagerDto: UpdatePurchasingManagerDto,

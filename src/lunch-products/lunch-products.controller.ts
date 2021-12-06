@@ -3,9 +3,9 @@ import {
   Get,
   Post,
   Body,
-  Patch,
   Param,
   Delete,
+  Put,
 } from '@nestjs/common';
 import { LunchProductsService } from './lunch-products.service';
 import { CreateLunchProductDto } from './dto/create-lunch-product.dto';
@@ -29,7 +29,7 @@ export class LunchProductsController {
     return this.lunchProductsService.findOne(+id);
   }
 
-  @Patch(':id')
+  @Put(':id')
   update(
     @Param('id') id: string,
     @Body() updateLunchProductDto: UpdateLunchProductDto,

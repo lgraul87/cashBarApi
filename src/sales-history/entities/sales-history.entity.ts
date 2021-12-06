@@ -65,7 +65,7 @@ export class SalesHistory {
   takeAway: CreateTakeAwayDto;
 
   @Column()
-  waiters: CreateWaiterDto;
+  waiter: CreateWaiterDto;
 
   @Column()
   date: Date;

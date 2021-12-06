@@ -3,9 +3,9 @@ import {
   Get,
   Post,
   Body,
-  Patch,
   Param,
   Delete,
+  Put,
 } from '@nestjs/common';
 import { SpiritDrinksService } from './spirit-drinks.service';
 import { CreateSpiritDrinkDto } from './dto/create-spirit-drink.dto';
@@ -29,7 +29,7 @@ export class SpiritDrinksController {
     return this.spiritDrinksService.findOne(+id);
   }
 
-  @Patch(':id')
+  @Put(':id')
   update(
     @Param('id') id: string,
     @Body() updateSpiritDrinkDto: UpdateSpiritDrinkDto,

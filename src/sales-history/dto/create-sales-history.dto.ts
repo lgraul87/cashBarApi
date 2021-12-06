@@ -27,7 +27,7 @@ export class CreateSalesHistoryDto {
   table?: CreateTableDto;
   counter?: CreateCounterDto;
   takeAway?: CreateTakeAwayDto;
-  waiters: CreateWaiterDto;
+  waiter: CreateWaiterDto;
   date: Date;
   bill: number;
 }

@@ -23,8 +23,48 @@ export class SalesHistoryService {
     return this.salesHistoryRepository.findOne(id);
   }
 
-  update(id: number, updateSalesHistoryDto: UpdateSalesHistoryDto) {
-    return this.salesHistoryRepository.update(id, updateSalesHistoryDto);
+  async update(id: number, updateSalesHistoryDto: UpdateSalesHistoryDto) {
+    const toUpdateSalesHistory = await this.salesHistoryRepository.findOne(id);
+    toUpdateSalesHistory.beerProduct =
+      updateSalesHistoryDto.beerProduct ?? toUpdateSalesHistory.beerProduct;
+    toUpdateSalesHistory.bill =
+      updateSalesHistoryDto.bill ?? toUpdateSalesHistory.bill;
+    toUpdateSalesHistory.breakfastProduct =
+      updateSalesHistoryDto.breakfastProduct ??
+      toUpdateSalesHistory.breakfastProduct;
+    toUpdateSalesHistory.date =
+      updateSalesHistoryDto.date ?? toUpdateSalesHistory.date;
+    toUpdateSalesHistory.dinnerProduct =
+      updateSalesHistoryDto.dinnerProduct ?? toUpdateSalesHistory.dinnerProduct;
+    toUpdateSalesHistory.juiceProduct =
+      updateSalesHistoryDto.juiceProduct ?? toUpdateSalesHistory.juiceProduct;
+    toUpdateSalesHistory.kilograms =
+      updateSalesHistoryDto.kilograms ?? toUpdateSalesHistory.kilograms;
+    toUpdateSalesHistory.liters =
+      updateSalesHistoryDto.liters ?? toUpdateSalesHistory.liters;
+    toUpdateSalesHistory.lunchProduct =
+      updateSalesHistoryDto.lunchProduct ?? toUpdateSalesHistory.lunchProduct;
+    toUpdateSalesHistory.price =
+      updateSalesHistoryDto.price ?? toUpdateSalesHistory.price;
+    toUpdateSalesHistory.softDrinkProduct =
+      updateSalesHistoryDto.softDrinkProduct ??
+      toUpdateSalesHistory.softDrinkProduct;
+    toUpdateSalesHistory.spiritDrinkProduct =
+      updateSalesHistoryDto.spiritDrinkProduct ??
+      toUpdateSalesHistory.spiritDrinkProduct;
+    toUpdateSalesHistory.units =
+      updateSalesHistoryDto.units ?? toUpdateSalesHistory.units;
+    toUpdateSalesHistory.waiter =
+      updateSalesHistoryDto.waiter ?? toUpdateSalesHistory.waiter;
+    toUpdateSalesHistory.wineProduct =
+      updateSalesHistoryDto.wineProduct ?? toUpdateSalesHistory.wineProduct;
+    toUpdateSalesHistory.counter =
+      updateSalesHistoryDto.counter ?? toUpdateSalesHistory.counter;
+    toUpdateSalesHistory.table =
+      updateSalesHistoryDto.table ?? toUpdateSalesHistory.table;
+    toUpdateSalesHistory.takeAway =
+      updateSalesHistoryDto.takeAway ?? toUpdateSalesHistory.takeAway;
+    return toUpdateSalesHistory;
   }
 
   remove(id: number) {

@@ -3,9 +3,9 @@ import {
   Get,
   Post,
   Body,
-  Patch,
   Param,
   Delete,
+  Put,
 } from '@nestjs/common';
 import { SoftDrinksService } from './soft-drinks.service';
 import { CreateSoftDrinkDto } from './dto/create-soft-drink.dto';
@@ -30,7 +30,7 @@ export class SoftDrinksController {
     return this.softDrinksService.findOne(+id);
   }
 
-  @Patch(':id')
+  @Put(':id')
   update(
     @Param('id') id: string,
     @Body() updateSoftDrinkDto: UpdateSoftDrinkDto,
